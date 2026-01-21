@@ -8570,7 +8570,7 @@
         "group": "14e4aadd0223525e",
         "name": "Liga",
         "label": "button",
-        "order": 1,
+        "order": 2,
         "width": 0,
         "height": 0,
         "emulateClick": false,
@@ -9414,6 +9414,43 @@
             [
                 "cd81ae09c1f64251"
             ]
+        ]
+    },
+    {
+        "id": "4131789ac163ad62",
+        "type": "ui-button",
+        "z": "6624be302cd9ea10",
+        "group": "14e4aadd0223525e",
+        "name": "",
+        "label": "button",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 930,
+        "y": 140,
+        "wires": [
+            []
         ]
     }
 ]
