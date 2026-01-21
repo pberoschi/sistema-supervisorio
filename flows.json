@@ -9452,5 +9452,36 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "690d356169448374",
+        "type": "ui-text-input",
+        "z": "6624be302cd9ea10",
+        "group": "14e4aadd0223525e",
+        "name": "",
+        "label": "text",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "topic": "topic",
+        "topicType": "msg",
+        "mode": "text",
+        "tooltip": "",
+        "delay": 300,
+        "passthru": true,
+        "sendOnDelay": false,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "sendOnClear": false,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "x": 930,
+        "y": 180,
+        "wires": [
+            []
+        ]
     }
 ]
