@@ -8570,7 +8570,7 @@
         "group": "14e4aadd0223525e",
         "name": "Liga",
         "label": "button",
-        "order": 2,
+        "order": 3,
         "width": 0,
         "height": 0,
         "emulateClick": false,
@@ -8822,7 +8822,7 @@
         "bot": "bot_config",
         "haserroroutput": false,
         "outputs": 1,
-        "x": 1890,
+        "x": 1730,
         "y": 840,
         "wires": [
             []
@@ -9039,7 +9039,7 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1760,
+        "x": 1520,
         "y": 920,
         "wires": [
             [
@@ -9130,7 +9130,7 @@
             "ee306796c85e8008",
             "827aee11f80a81da"
         ],
-        "x": 1615,
+        "x": 1375,
         "y": 920,
         "wires": [
             [
@@ -9148,7 +9148,7 @@
         "links": [
             "8a0a293f62ee9b0d"
         ],
-        "x": 1455,
+        "x": 1245,
         "y": 920,
         "wires": []
     },
@@ -9423,7 +9423,7 @@
         "group": "14e4aadd0223525e",
         "name": "",
         "label": "button",
-        "order": 1,
+        "order": 2,
         "width": 0,
         "height": 0,
         "emulateClick": false,
@@ -9460,7 +9460,7 @@
         "group": "14e4aadd0223525e",
         "name": "",
         "label": "text",
-        "order": 0,
+        "order": 1,
         "width": 0,
         "height": 0,
         "topic": "topic",
