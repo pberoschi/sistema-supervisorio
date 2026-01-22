@@ -1,13 +1,5 @@
 [
     {
-        "id": "3fd9281146a46009",
-        "type": "tab",
-        "label": "Fluxo 1",
-        "disabled": false,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "a918d6c7e9331df3",
         "type": "tab",
         "label": "Fluxo 4",
