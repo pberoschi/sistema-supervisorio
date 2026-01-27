@@ -48,8 +48,8 @@
             "ed7bc69bdd110d44",
             "eee263da36b1cf8d"
         ],
-        "x": 34,
-        "y": 679,
+        "x": 14,
+        "y": 199,
         "w": 752,
         "h": 522
     },
@@ -784,6 +784,23 @@
         "h": 482
     },
     {
+        "id": "e7049bb34f467d5f",
+        "type": "group",
+        "z": "8d0cb1028153fa70",
+        "name": "Captação",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "ccfc5b04b1b23119",
+            "2b5a99f31ae09495"
+        ],
+        "x": 34,
+        "y": 799,
+        "w": 352,
+        "h": 262
+    },
+    {
         "id": "29db418afc603ed8",
         "type": "ui_tab",
         "name": "SES MORRO SÃO PAULO",
@@ -1482,6 +1499,42 @@
         "useselfsignedcertificate": false,
         "sslterminated": false,
         "verboselogging": false
+    },
+    {
+        "id": "a3e8a5eacd58328e",
+        "type": "ui-page",
+        "name": "Captação",
+        "ui": "514846ac6febf85b",
+        "path": "/page4",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "c6af2de771532966",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 4,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
     },
     {
         "id": "5443db47bf0ae59a",
@@ -7915,8 +7968,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 110,
-        "y": 1020,
+        "x": 90,
+        "y": 540,
         "wires": [
             [
                 "dcdd86134362a47e"
@@ -7955,8 +8008,8 @@
         "enablePointerup": false,
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
-        "x": 110,
-        "y": 980,
+        "x": 90,
+        "y": 500,
         "wires": [
             [
                 "dcdd86134362a47e"
@@ -8014,8 +8067,8 @@
         "offvalueType": "bool",
         "officon": "",
         "offcolor": "",
-        "x": 170,
-        "y": 900,
+        "x": 150,
+        "y": 420,
         "wires": [
             [
                 "4271aeeb75c16cf7"
@@ -8071,8 +8124,8 @@
         "styleRounded": true,
         "styleGlow": false,
         "className": "",
-        "x": 120,
-        "y": 1100,
+        "x": 100,
+        "y": 620,
         "wires": [
             []
         ]
@@ -8126,8 +8179,8 @@
         "styleRounded": true,
         "styleGlow": false,
         "className": "",
-        "x": 280,
-        "y": 1100,
+        "x": 260,
+        "y": 620,
         "wires": [
             []
         ]
@@ -8181,8 +8234,8 @@
         "styleRounded": true,
         "styleGlow": false,
         "className": "",
-        "x": 280,
-        "y": 1160,
+        "x": 260,
+        "y": 680,
         "wires": [
             []
         ]
@@ -8236,8 +8289,8 @@
         "styleRounded": true,
         "styleGlow": false,
         "className": "",
-        "x": 130,
-        "y": 1160,
+        "x": 110,
+        "y": 680,
         "wires": [
             []
         ]
@@ -8261,8 +8314,8 @@
         "raw": false,
         "className": "",
         "name": "NotificacaoRemoto",
-        "x": 670,
-        "y": 900,
+        "x": 650,
+        "y": 420,
         "wires": [
             []
         ]
@@ -8280,8 +8333,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 430,
-        "y": 900,
+        "x": 410,
+        "y": 420,
         "wires": [
             [
                 "850bde7ccac6bdf3"
@@ -8301,8 +8354,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 340,
-        "y": 1000,
+        "x": 320,
+        "y": 520,
         "wires": [
             [
                 "ef4911e2d806d397"
@@ -8330,8 +8383,8 @@
         "className": "",
         "value": "payload",
         "valueType": "msg",
-        "x": 490,
-        "y": 1000,
+        "x": 470,
+        "y": 520,
         "wires": []
     },
     {
@@ -8353,8 +8406,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 140,
-        "y": 720,
+        "x": 120,
+        "y": 240,
         "wires": [
             []
         ]
@@ -8373,8 +8426,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
-        "y": 780,
+        "x": 360,
+        "y": 300,
         "wires": [
             []
         ]
@@ -8401,8 +8454,8 @@
         "topic": "",
         "payload": "1",
         "payloadType": "num",
-        "x": 150,
-        "y": 780,
+        "x": 130,
+        "y": 300,
         "wires": [
             [
                 "eee263da36b1cf8d"
@@ -9366,6 +9419,70 @@
             [
                 "65312b4d84a2b491"
             ]
+        ]
+    },
+    {
+        "id": "ccfc5b04b1b23119",
+        "type": "ui-template",
+        "z": "8d0cb1028153fa70",
+        "g": "e7049bb34f467d5f",
+        "group": "",
+        "page": "a3e8a5eacd58328e",
+        "ui": "",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<!DOCTYPE html>\n<html>\n\n<head>\n    <title>USAM Dashboard</title>\n    <!-- Material Design Icons -->\n    <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\n    <!-- Vuetify CSS (versão 3) -->\n    <link href=\"https://cdn.jsdelivr.net/npm/vuetify@3/dist/vuetify.min.css\" rel=\"stylesheet\">\n    <style>\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n\n        body {\n            font-family: 'Roboto', sans-serif;\n            background:\n                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),\n                url('https://images.pexels.com/photos/33559401/pexels-photo-33559401.jpeg') !important;\n            background-size: cover !important;\n            background-position: center !important;\n            background-repeat: no-repeat !important;\n            background-attachment: fixed !important;\n            min-height: 100vh !important;\n            padding-top: 64px;\n            /* Altura do header */\n        }\n\n        .dashboard-container {\n            max-width: 1400px;\n            margin: 0 auto;\n            padding: 20px;\n        }\n\n        .header {\n            position: fixed;\n            top: 0;\n            left: 0;\n            width: 100%;\n            background-color: #1976D2;\n            /* Azul do Vuetify */\n            color: white;\n            padding: 16px 24px;\n            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);\n            z-index: 1000;\n            display: flex;\n            align-items: center;\n        }\n\n        .header-title {\n            font-size: 1.5rem;\n            font-weight: 500;\n        }\n\n        .content-wrapper {\n            background-color: rgba(255, 255, 255, 0.9);\n            border-radius: 8px;\n            padding: 20px;\n            margin-top: 20px;\n        }\n\n        .row {\n            display: flex;\n            flex-wrap: wrap;\n            margin: -12px;\n        }\n\n        .col {\n            flex: 1 0 25%;\n            max-width: 25%;\n            padding: 12px;\n        }\n\n        @media (max-width: 1200px) {\n            .col {\n                flex: 1 0 50%;\n                max-width: 50%;\n            }\n        }\n\n        @media (max-width: 768px) {\n            .col {\n                flex: 1 0 100%;\n                max-width: 100%;\n            }\n        }\n\n        .card {\n            background-color: rgba(255, 255, 255, 0.95);\n            border-radius: 8px;\n            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);\n            overflow: hidden;\n            transition: transform 0.3s;\n            height: 100%;\n        }\n\n        .card:hover {\n            transform: translateY(-5px);\n            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);\n        }\n\n        .card-img {\n            width: 100%;\n            height: 200px;\n            object-fit: cover;\n        }\n\n        .card-content {\n            padding: 16px;\n        }\n\n        .card-title {\n            font-size: 1.25rem;\n            font-weight: 500;\n            margin-bottom: 8px;\n            color: #333;\n        }\n\n        .btn {\n            background-color: #FF9800;\n            /* Laranja warning */\n            color: white;\n            border: none;\n            padding: 8px 16px;\n            border-radius: 4px;\n            cursor: pointer;\n            font-size: 0.875rem;\n            font-weight: 500;\n            text-transform: uppercase;\n            letter-spacing: 0.0892857143em;\n            transition: background-color 0.3s;\n            margin-bottom: 12px;\n        }\n\n        .btn:hover {\n            background-color: #F57C00;\n        }\n\n        .motor-title {\n            position: absolute;\n            bottom: 0;\n            left: 0;\n            right: 0;\n            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));\n            color: white;\n            padding: 16px;\n            font-size: 1.1rem;\n        }\n\n        .img-container {\n            position: relative;\n        }\n    </style>\n</head>\n\n<body>\n    <!-- Header -->\n    <!-- <div class=\"header\">\n        <div class=\"header-title\">USAM</div>\n    </div> -->\n\n    <!-- Conteúdo Principal -->\n    <div class=\"dashboard-container\">\n        <div class=\"content-wrapper\">\n            <!-- Primeira linha de cards -->\n            <div class=\"row\">\n                <div class=\"col\">\n                    <div class=\"card\">\n                        <div class=\"img-container\">\n                            <img src=\"https://images.pexels.com/photos/33559401/pexels-photo-33559401.jpeg\"\n                                 alt=\"Motor explodido\"\n                                 class=\"card-img\">\n                            <div class=\"motor-title\">Motor explodido</div>\n                        </div>\n                        <div class=\"card-content\">\n                            <div>card 1</div>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"col\">\n                    <div class=\"card\">\n                        <img src=\"https://images.pexels.com/photos/42186/pexels-photo-42186.jpeg\"\n                             alt=\"Motor\"\n                             class=\"card-img\">\n                        <div class=\"card-content\">\n                            <div class=\"card-title\">Motor</div>\n                            <div>card 2</div>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"col\">\n                    <div class=\"card\">\n                        <img src=\"https://images.pexels.com/photos/33192204/pexels-photo-33192204.jpeg\"\n                             alt=\"Motor\"\n                             class=\"card-img\">\n                        <div class=\"card-content\">\n                            <div class=\"card-title\">Motor</div>\n                            <div>card 3</div>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"col\">\n                    <div class=\"card\">\n                        <img src=\"https://images.pexels.com/photos/8478223/pexels-photo-8478223.jpeg\"\n                             alt=\"Motor\"\n                             class=\"card-img\">\n                        <div class=\"card-content\">\n                            <div class=\"card-title\">Motor</div>\n                            <div>card 4</div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n\n            <!-- Segunda linha de cards -->\n            <div class=\"row\">\n                <div class=\"col\">\n                    <div class=\"card\">\n                        <div class=\"card-content\">\n                            <button class=\"btn\">LIGA</button>\n                            <div class=\"card-title\">To do list</div>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"col\">\n                    <div class=\"card\">\n                        <div class=\"card-content\">\n                            <div class=\"card-title\">Cronômetro</div>\n                            <div id=\"cronometro\">00:00:00</div>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"col\">\n                    <div class=\"card\">\n                        <div class=\"card-content\">\n                            <div class=\"card-title\">Alarme</div>\n                        </div>\n                    </div>\n                </div>\n\n                <div class=\"col\">\n                    <div class=\"card\">\n                        <div class=\"card-content\">\n                            <div class=\"card-title\">Cotação</div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <!-- Script para funcionalidades -->\n    <script>\n        // Cronômetro simples\n        let seconds = 0;\n        let timerInterval;\n        \n        function updateTimer() {\n            seconds++;\n            const hours = Math.floor(seconds / 3600);\n            const minutes = Math.floor((seconds % 3600) / 60);\n            const secs = seconds % 60;\n            \n            document.getElementById('cronometro').textContent = \n                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;\n        }\n        \n        // Iniciar cronômetro\n        timerInterval = setInterval(updateTimer, 1000);\n        \n        // Botão LIGA\n        document.querySelector('.btn').addEventListener('click', function() {\n            alert('Botão LIGA pressionado!');\n            // Aqui você pode adicionar lógica para enviar mensagem ao Node-RED\n        });\n    </script>\n</body>\n\n</html>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "widget:page",
+        "className": "",
+        "x": 120,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2b5a99f31ae09495",
+        "type": "ui-button",
+        "z": "8d0cb1028153fa70",
+        "d": true,
+        "g": "e7049bb34f467d5f",
+        "group": "",
+        "name": "LIGA",
+        "label": "button",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 310,
+        "y": 1020,
+        "wires": [
+            []
         ]
     }
 ]
