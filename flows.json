@@ -182,6 +182,26 @@
         "h": 1394
     },
     {
+        "id": "e7049bb34f467d5f",
+        "type": "group",
+        "z": "8d0cb1028153fa70",
+        "name": "Captação",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "ccfc5b04b1b23119",
+            "2b5a99f31ae09495",
+            "696d153a4ebfe29a",
+            "26bef4ac2732d298",
+            "b5d72f322af93091"
+        ],
+        "x": 34,
+        "y": 799,
+        "w": 352,
+        "h": 262
+    },
+    {
         "id": "531877efe6f3ca5b",
         "type": "group",
         "z": "a918d6c7e9331df3",
@@ -782,23 +802,6 @@
         "y": 899,
         "w": 752,
         "h": 482
-    },
-    {
-        "id": "e7049bb34f467d5f",
-        "type": "group",
-        "z": "8d0cb1028153fa70",
-        "name": "Captação",
-        "style": {
-            "label": true
-        },
-        "nodes": [
-            "ccfc5b04b1b23119",
-            "2b5a99f31ae09495"
-        ],
-        "x": 34,
-        "y": 799,
-        "w": 352,
-        "h": 262
     },
     {
         "id": "29db418afc603ed8",
@@ -9425,6 +9428,7 @@
         "id": "ccfc5b04b1b23119",
         "type": "ui-template",
         "z": "8d0cb1028153fa70",
+        "d": true,
         "g": "e7049bb34f467d5f",
         "group": "",
         "page": "a3e8a5eacd58328e",
@@ -9480,6 +9484,83 @@
         "pointerupPayload": "",
         "pointerupPayloadType": "str",
         "x": 310,
+        "y": 1020,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "696d153a4ebfe29a",
+        "type": "ui-template",
+        "z": "8d0cb1028153fa70",
+        "d": true,
+        "g": "e7049bb34f467d5f",
+        "group": "",
+        "page": "a3e8a5eacd58328e",
+        "ui": "",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n  <v-container>\n    <v-card\n      class=\"mx-auto\"\n      max-width=\"400\"\n      elevation=\"6\"\n      rounded=\"lg\"\n    >\n      <!-- Imagem do Dispositivo com Overlay de Gradiente -->\n      <v-img\n        class=\"align-end text-white\"\n        height=\"220\"\n        src=\"https://cdn.vuetifyjs.com/images/cards/house.jpg\"\n        cover\n        gradient=\"to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7)\"\n      >\n        <v-card-title class=\"text-h5 font-weight-bold\">\n          Controle Sala\n        </v-card-title>\n      </v-img>\n\n      <!-- Texto de Status Dinâmico -->\n      <v-card-text class=\"pt-4\">\n        <div class=\"d-flex align-center justify-space-between\">\n          <span class=\"text-subtitle-1\">Status do Dispositivo:</span>\n          <v-chip\n            :color=\"deviceState ? 'success' : 'error'\"\n            variant=\"flat\"\n          >\n            {{ deviceState ? 'LIGADO' : 'DESLIGADO' }}\n          </v-chip>\n        </div>\n      </v-card-text>\n\n      <v-divider></v-divider>\n\n      <!-- Ações de Controle -->\n      <v-card-actions class=\"pa-4\">\n        <v-row>\n          <v-col cols=\"6\">\n            <v-btn\n              block\n              color=\"success\"\n              variant=\"elevated\"\n              prepend-icon=\"mdi-power\"\n              height=\"48\"\n              @click=\"toggle(true)\"\n              :disabled=\"deviceState === true\"\n            >\n              Ligar\n            </v-btn>\n          </v-col>\n          <v-col cols=\"6\">\n            <v-btn\n              block\n              color=\"error\"\n              variant=\"elevated\"\n              prepend-icon=\"mdi-power-off\"\n              height=\"48\"\n              @click=\"toggle(false)\"\n              :disabled=\"deviceState === false\"\n            >\n              Desligar\n            </v-btn>\n          </v-col>\n        </v-row>\n      </v-card-actions>\n    </v-card>\n  </v-container>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      // Estado local inicial (pode ser sobrescrito pelo msg.payload)\n      deviceState: false\n    };\n  },\n  watch: {\n    // Observa mensagens chegando do Node-RED para atualizar a UI externamente\n    msg: {\n      handler(newValue) {\n        if (newValue && typeof newValue.payload === 'boolean') {\n          this.deviceState = newValue.payload;\n        }\n      },\n      deep: true\n    }\n  },\n  methods: {\n    toggle(state) {\n      this.deviceState = state;\n      // Envia o comando para o Node-RED\n      this.send({ payload: state });\n    }\n  }\n};\n</script>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "widget:page",
+        "className": "",
+        "x": 120,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "26bef4ac2732d298",
+        "type": "ui-template",
+        "z": "8d0cb1028153fa70",
+        "g": "e7049bb34f467d5f",
+        "group": "",
+        "page": "a3e8a5eacd58328e",
+        "ui": "",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n  <v-container fluid>\n    <!-- O v-row cria a linha da grade -->\n    <v-row dense>\n      <!-- O v-for itera sobre o array 'devices'. :key é obrigatório para performance -->\n      <!-- Responsividade: 1 coluna em mobile (cols=12), 2 em tablets (sm=6), 3 em desktop (md=4) -->\n      <v-col\n        v-for=\"(device, index) in devices\"\n        :key=\"device.id\"\n        cols=\"12\"\n        sm=\"6\"\n        md=\"4\"\n        xl=\"3\"\n      >\n        <v-card\n          class=\"mx-auto d-flex flex-column\"\n          elevation=\"6\"\n          rounded=\"lg\"\n          height=\"100%\"\n        >\n          <!-- Imagem dinâmica baseada no objeto device -->\n          <v-img\n            class=\"align-end text-white\"\n            height=\"200\"\n            :src=\"device.image || 'https://cdn.vuetifyjs.com/images/cards/house.jpg'\"\n            cover\n            gradient=\"to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.8)\"\n          >\n            <v-card-title class=\"text-h5 font-weight-bold\">\n              {{ device.name }}\n            </v-card-title>\n          </v-img>\n\n          <!-- Conteúdo -->\n          <v-card-text class=\"pt-4 flex-grow-1\">\n            <div class=\"d-flex align-center justify-space-between\">\n              <span class=\"text-subtitle-1\">Status:</span>\n              <v-chip\n                :color=\"device.state ? 'success' : 'error'\"\n                variant=\"flat\"\n                label\n              >\n                {{ device.state ? 'LIGADO' : 'DESLIGADO' }}\n              </v-chip>\n            </div>\n            <div class=\"mt-2 text-caption text-grey\">\n              ID: {{ device.id }}\n            </div>\n          </v-card-text>\n\n          <v-divider></v-divider>\n\n          <!-- Ações -->\n          <v-card-actions class=\"pa-4\">\n            <v-row no-gutters>\n              <v-col cols=\"6\" class=\"pr-2\">\n                <v-btn\n                  block\n                  color=\"success\"\n                  variant=\"elevated\"\n                  prepend-icon=\"mdi-power\"\n                  @click=\"toggle(device, true)\"\n                  :disabled=\"device.state === true\"\n                >\n                  Ligar\n                </v-btn>\n              </v-col>\n              <v-col cols=\"6\" class=\"pl-2\">\n                <v-btn\n                  block\n                  color=\"error\"\n                  variant=\"elevated\"\n                  prepend-icon=\"mdi-power-off\"\n                  @click=\"toggle(device, false)\"\n                  :disabled=\"device.state === false\"\n                >\n                  Desligar\n                </v-btn>\n              </v-col>\n            </v-row>\n          </v-card-actions>\n        </v-card>\n      </v-col>\n    </v-row>\n  </v-container>\n</template>\n\n\n\n\n\n<script>\nexport default {\n  data() {\n    return {\n      // Lista inicial de dispositivos (será renderizada pelo v-for)\n      devices: [\n        {\n          id: 'sala_principal',\n          name: 'Sala de Estar',\n          image: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',\n          state: false\n        },\n        {\n          id: 'cozinha',\n          name: 'Cozinha',\n          image: 'https://cdn.vuetifyjs.com/images/cards/cooking.png',\n          state: true\n        },\n        {\n          id: 'quarto_suite',\n          name: 'Suíte Master',\n          image: 'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg',\n          state: false\n        }\n      ]\n    };\n  },\n  watch: {\n    // Lógica robusta para receber dados do Node-RED\n    msg: {\n      handler(newValue) {\n        if (!newValue) return;\n\n        // Caso 1: Recebeu um array completo para substituir a lista\n        if (Array.isArray(newValue.payload)) {\n          this.devices = newValue.payload;\n        }\n        // Caso 2: Recebeu um objeto de atualização { id: '...', state: boolean }\n        else if (typeof newValue.payload === 'object' && newValue.payload.id) {\n          const targetIndex = this.devices.findIndex(d => d.id === newValue.payload.id);\n          if (targetIndex !== -1) {\n            // Atualiza apenas o estado do dispositivo específico\n            this.devices[targetIndex].state = newValue.payload.state;\n            // Se houver imagem ou nome na mensagem, atualiza também\n            if(newValue.payload.image) this.devices[targetIndex].image = newValue.payload.image;\n          }\n        }\n      },\n      deep: true\n    }\n  },\n  methods: {\n    toggle(device, newState) {\n      // Atualização otimista da UI\n      device.state = newState;\n\n      // Envia para o Node-RED qual dispositivo mudou e o novo estado\n      this.send({\n        payload: {\n          id: device.id,\n          name: device.name,\n          state: newState,\n          timestamp: new Date().toISOString()\n        }\n      });\n    }\n  }\n};\n</script>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "widget:page",
+        "className": "",
+        "x": 120,
+        "y": 960,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b5d72f322af93091",
+        "type": "ui-template",
+        "z": "8d0cb1028153fa70",
+        "d": true,
+        "g": "e7049bb34f467d5f",
+        "group": "",
+        "page": "a3e8a5eacd58328e",
+        "ui": "",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "<template>\n  <v-container fluid class=\"pa-4 bg-grey-lighten-4 h-100\">\n    <!-- Título do Painel (Opcional, simula v-app-bar local) -->\n    <v-row>\n      <v-col cols=\"12\">\n        <div class=\"d-flex align-center mb-4\">\n          <v-icon icon=\"mdi-home-automation\" color=\"primary\" size=\"large\" class=\"mr-2\"></v-icon>\n          <h2 class=\"text-h5 font-weight-bold text-primary\">Controle Residencial</h2>\n        </div>\n      </v-col>\n    </v-row>\n\n    <!-- Grade de Dispositivos -->\n    <v-row dense>\n      <v-col\n        v-for=\"(device, index) in devices\"\n        :key=\"device.id\"\n        cols=\"12\"\n        sm=\"6\"\n        md=\"4\"\n        xl=\"3\"\n      >\n        <v-card\n          class=\"mx-auto d-flex flex-column transition-swing\"\n          :elevation=\"device.state ? 8 : 2\"\n          :color=\"device.state ? 'white' : 'grey-lighten-4'\"\n          rounded=\"lg\"\n          border\n          height=\"100%\"\n        >\n          <!-- Imagem com Overlay Gradiente -->\n          <v-img\n            class=\"align-end text-white\"\n            height=\"200\"\n            :src=\"device.image || 'https://cdn.vuetifyjs.com/images/cards/house.jpg'\"\n            cover\n            gradient=\"to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.9)\"\n          >\n            <template v-slot:placeholder>\n              <v-row class=\"fill-height ma-0\" align=\"center\" justify=\"center\">\n                <v-progress-circular indeterminate color=\"grey-lighten-5\"></v-progress-circular>\n              </v-row>\n            </template>\n            \n            <v-card-title class=\"text-h6 font-weight-bold pl-4 pb-4\">\n              {{ device.name }}\n              <v-icon \n                :icon=\"device.state ? 'mdi-lightning-bolt' : 'mdi-sleep'\"\n                size=\"small\"\n                :color=\"device.state ? 'yellow-accent-4' : 'grey'\"\n                class=\"ml-2\"\n              ></v-icon>\n            </v-card-title>\n          </v-img>\n\n          <!-- Status e Detalhes -->\n          <v-card-text class=\"pt-4 flex-grow-1\">\n            <div class=\"d-flex align-center justify-space-between\">\n              <span class=\"text-body-2 text-medium-emphasis\">Estado Atual</span>\n              <v-chip\n                :color=\"device.state ? 'success' : 'grey'\"\n                variant=\"tonal\"\n                label\n                size=\"small\"\n                class=\"font-weight-bold\"\n              >\n                {{ device.state ? 'ATIVO' : 'INATIVO' }}\n              </v-chip>\n            </div>\n            <div class=\"mt-2 text-caption text-disabled font-monospace\">\n              ID: {{ device.id }}\n            </div>\n          </v-card-text>\n\n          <v-divider></v-divider>\n\n          <!-- Botões de Ação -->\n          <v-card-actions class=\"pa-3 bg-grey-lighten-5\">\n            <v-row dense>\n              <v-col cols=\"6\">\n                <v-btn\n                  block\n                  color=\"success\"\n                  variant=\"tonal\"\n                  prepend-icon=\"mdi-power\"\n                  @click=\"toggle(device, true)\"\n                  :disabled=\"device.state === true\"\n                  density=\"comfortable\"\n                >\n                  Ligar\n                </v-btn>\n              </v-col>\n              <v-col cols=\"6\">\n                <v-btn\n                  block\n                  color=\"error\"\n                  variant=\"tonal\"\n                  prepend-icon=\"mdi-power-off\"\n                  @click=\"toggle(device, false)\"\n                  :disabled=\"device.state === false\"\n                  density=\"comfortable\"\n                >\n                  Desligar\n                </v-btn>\n              </v-col>\n            </v-row>\n          </v-card-actions>\n        </v-card>\n      </v-col>\n    </v-row>\n  </v-container>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      devices: [\n        {\n          id: 'sala_principal',\n          name: 'Sala de Estar',\n          image: 'https://cdn.vuetifyjs.com/images/cards/house.jpg',\n          state: false\n        },\n        {\n          id: 'cozinha',\n          name: 'Cozinha',\n          image: 'https://cdn.vuetifyjs.com/images/cards/cooking.png',\n          state: true\n        },\n        {\n          id: 'quarto_suite',\n          name: 'Suíte Master',\n          image: 'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg',\n          state: false\n        }\n      ]\n    };\n  },\n  watch: {\n    // Escuta mensagens do Node-RED (Dashboard 2.0)\n    msg: {\n      handler(newValue) {\n        if (!newValue) return;\n\n        // Caso 1: Array completo (Substituição)\n        if (Array.isArray(newValue.payload)) {\n          this.devices = newValue.payload;\n        }\n        // Caso 2: Objeto único (Atualização pontual)\n        else if (typeof newValue.payload === 'object' && newValue.payload.id) {\n          const targetIndex = this.devices.findIndex(d => d.id === newValue.payload.id);\n          if (targetIndex !== -1) {\n            // Preserva propriedades existentes, atualiza apenas as novas\n            Object.assign(this.devices[targetIndex], newValue.payload);\n          }\n        }\n      },\n      deep: true\n    }\n  },\n  methods: {\n    toggle(device, newState) {\n      // Atualização otimista local\n      device.state = newState;\n\n      // Envia payload formatado de volta ao fluxo do Node-RED\n      this.send({\n        payload: {\n          ...device,\n          state: newState,\n          last_updated: new Date().toISOString()\n        }\n      });\n    }\n  }\n};\n</script>\n\n<style scoped>\n/* Ajustes finos opcionais para tipografia */\n.font-monospace {\n  font-family: monospace;\n}\n</style>",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "widget:page",
+        "className": "",
+        "x": 120,
         "y": 1020,
         "wires": [
             []
